@@ -1,0 +1,42 @@
+{
+  "report_name": "repaired",
+  "success": true,
+  "gx_success": true,
+  "is_fresh": true,
+  "total_rows": 24,
+  "freshness": {
+    "total_rows": 24,
+    "latest_published": "2026-07-22",
+    "oldest_published": "2026-03-28",
+    "stale_rows": 1,
+    "stale_ratio": 0.0417,
+    "freshness_threshold_days": 180,
+    "is_fresh": true
+  },
+  "expectations": [
+    {
+      "expectation": "expect_table_row_count_to_be_between",
+      "success": true
+    },
+    {
+      "expectation": "expect_column_values_to_not_be_null",
+      "success": true
+    },
+    {
+      "expectation": "expect_column_values_to_be_unique",
+      "success": true
+    },
+    {
+      "expectation": "expect_column_values_to_not_be_null",
+      "success": true
+    },
+    {
+      "expectation": "expect_column_values_to_not_be_null",
+      "success": true
+    },
+    {
+      "expectation": "expect_column_value_lengths_to_be_between",
+      "success": true
+    }
+  ]
+}

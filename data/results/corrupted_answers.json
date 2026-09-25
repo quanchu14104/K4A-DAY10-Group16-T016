@@ -1,0 +1,148 @@
+[
+  {
+    "id": "eval_001",
+    "question_type": "summary",
+    "question": "What is the summary of the paper 'Continuous Benchmark Evaluation for Enterprise Retrieval Pipelines'?",
+    "ground_truth": "Static benchmarks fail to capture domain drift in enterprise knowledge bases.",
+    "ground_truth_doc_ids": [
+      "10.1145/3637528.3671812"
+    ],
+    "answer": "",
+    "retrieved_doc_ids": [
+      "10.1145/3637528.3671824",
+      "10.1145/3637528.3671824",
+      "10.1145/3637528.3671817",
+      "10.1145/3637528.3671805"
+    ],
+    "retrieved_contexts": [
+      "Title: Advanced Perspectives on Continuous Benchmark Evaluation for Enterprise Retrieval Pipelines\nAuthors: Quang Le, Yen Vu\nPublished: 2026-06-12\nCategories: Evaluation Methodology, Enterprise Systems\nSummary: ",
+      "Title: Advanced Perspectives on Continuous Benchmark Evaluation for Enterprise Retrieval Pipelines\nAuthors: Quang Le, Yen Vu\nPublished: 2026-06-12\nCategories: Evaluation Methodology, Enterprise Systems\nSummary: ",
+      "Title: Advanced Perspectives on Evaluating Retrieval Precision with Token F1 and LLM Judges\nAuthors: Tuan Phan, Mai Bui\nPublished: 2026-06-05\nCategories: Natural Language Processing, Evaluation Methodology\nSummary: An extended empirical study on valuating open-domain QA requires robust metrics. We benchmark semantic similarity, token-level overlap F1, and model-based judge verdicts to quantify RAG answer correctness across noisy corpus conditions Further analysis on scaling parameters.",
+      "Title: Evaluating Retrieval Precision with Token F1 and LLM Judges\nAuthors: Tuan Phan, Mai Bui\nPublished: 2021-03-28\nCategories: Natural Language Processing, Evaluation Methodology\nSummary: Evaluating open-domain QA requires robust metrics. We benchmark semantic similarity, token-level overlap F1, and model-based judge verdicts to quantify RAG answer correctness across noisy corpus conditions."
+    ],
+    "retrieval_hit": false,
+    "token_f1": 0.0,
+    "judge": {
+      "score": 1,
+      "correct": false,
+      "reasoning": "The model answer is empty and does not provide the summary; it fails to match the reference answer stating that static benchmarks fail to capture domain drift in enterprise knowledge bases."
+    }
+  },
+  {
+    "id": "eval_002",
+    "question_type": "authors",
+    "question": "Who are the authors of the research 'Multi-Agent Consensus for High-Stakes Fact Verification'?",
+    "ground_truth": "Phong Vu, Ngan Hoang",
+    "ground_truth_doc_ids": [
+      "10.1145/3637528.3671808"
+    ],
+    "answer": "An extended empirical study on single LLM is susceptible to confirmation bias when evaluating retrieved evidence.",
+    "retrieved_doc_ids": [
+      "10.1145/3637528.3671820",
+      "10.1145/3637528.3671813",
+      "10.1145/3637528.3671801",
+      "10.1145/3637528.3671816"
+    ],
+    "retrieved_contexts": [
+      "Title: Advanced\nAuthors: Phong Vu, Ngan Hoang\nPublished: 2026-06-08\nCategories: Multi-Agent Systems, Artificial Intelligence\nSummary: An extended empirical study on single LLM is susceptible to confirmation bias when evaluating retrieved evidence. We demonstrate a multi-agent debate architecture where specialized verifier agents critique and corroborate citations Further analysis on scaling parameters.",
+      "Title: Advanced Perspectives on Agentic Retrieval-Augmented Generation for Knowledge-Intensive Tasks\nAuthors: Minh Nguyen, Hoang Le\nPublished: 2021-06-01\nCategories: Artificial Intelligence, Information Retrieval\nSummary: An extended empirical study on etrieval-Augmented Generation (RAG) significantly improves large language model accuracy by grounding responses in retrieved passages. We explore agentic multi-hop reasoning and routing across heterogeneous vector indices Further analysis on scaling parameters.",
+      "Title: Agentic Retrieval-Augmented Generation for Knowledge-Intensive Tasks\nAuthors: Minh Nguyen, Hoang Le\nPublished: 2021-05-20\nCategories: Artificial Intelligence, Information Retrieval\nSummary: Retrieval-Augmented Generation (RAG) significantly improves large language model accuracy by grounding responses in retrieved passages. We explore agentic multi-hop reasoning and routing across heterogeneous vector indices.",
+      "Title: Advanced Perspectives on Freshness SLAs for Real-Time LLM Knowledge Augmentation\nAuthors: Bao Do, Linh Ngo\nPublished: 2026-06-04\nCategories: Data Management, Artificial Intelligence\nSummary: An extended empirical study on e define freshness service-level agreements (SLAs) for temporal document ingestion. By tracking document age and update cadence, our orchestrator dynamically prioritizes recrawling high-churn technical corpora Further analysis on scaling parameters."
+    ],
+    "retrieval_hit": false,
+    "token_f1": 0.0,
+    "judge": {
+      "score": 1,
+      "correct": false,
+      "reasoning": "The model answer does not provide the authors of the research; it gives an unrelated statement, so it is materially incorrect."
+    }
+  },
+  {
+    "id": "eval_003",
+    "question_type": "date",
+    "question": "When was the paper 'Freshness SLAs for Real-Time LLM Knowledge Augmentation' published?",
+    "ground_truth": "2026-07-05",
+    "ground_truth_doc_ids": [
+      "10.1145/3637528.3671804"
+    ],
+    "answer": "2026-06-04",
+    "retrieved_doc_ids": [
+      "10.1145/3637528.3671816",
+      "10.1145/3637528.3671813",
+      "10.1145/3637528.3671820",
+      "10.1145/3637528.3671814"
+    ],
+    "retrieved_contexts": [
+      "Title: Advanced Perspectives on Freshness SLAs for Real-Time LLM Knowledge Augmentation\nAuthors: Bao Do, Linh Ngo\nPublished: 2026-06-04\nCategories: Data Management, Artificial Intelligence\nSummary: An extended empirical study on e define freshness service-level agreements (SLAs) for temporal document ingestion. By tracking document age and update cadence, our orchestrator dynamically prioritizes recrawling high-churn technical corpora Further analysis on scaling parameters.",
+      "Title: Advanced Perspectives on Agentic Retrieval-Augmented Generation for Knowledge-Intensive Tasks\nAuthors: Minh Nguyen, Hoang Le\nPublished: 2021-06-01\nCategories: Artificial Intelligence, Information Retrieval\nSummary: An extended empirical study on etrieval-Augmented Generation (RAG) significantly improves large language model accuracy by grounding responses in retrieved passages. We explore agentic multi-hop reasoning and routing across heterogeneous vector indices Further analysis on scaling parameters.",
+      "Title: Advanced\nAuthors: Phong Vu, Ngan Hoang\nPublished: 2026-06-08\nCategories: Multi-Agent Systems, Artificial Intelligence\nSummary: An extended empirical study on single LLM is susceptible to confirmation bias when evaluating retrieved evidence. We demonstrate a multi-agent debate architecture where specialized verifier agents critique and corroborate citations Further analysis on scaling parameters.",
+      "Title: Advanced Perspectives on Data Observability and Quality Gates for Production RAG Systems\nAuthors: Anh Tran, Quoc Pham\nPublished: 2021-06-02\nCategories: Software Engineering, Data Systems\nSummary: An extended empirical study on ilent data corruption in RAG pipelines degrades LLM answer faithfulness without throwing runtime errors. We introduce automated quality gates using Great Expectations 1.x to catch stale and malformed embeddings before serving Further analysis on scaling parameters."
+    ],
+    "retrieval_hit": false,
+    "token_f1": 0.0,
+    "judge": {
+      "score": 1,
+      "correct": false,
+      "reasoning": "Fallback heuristic judge used because the LLM evaluator was unavailable."
+    }
+  },
+  {
+    "id": "eval_004",
+    "question_type": "categories",
+    "question": "Which field or subject category does the paper 'Synthetic Corruption Testing: Stress-Testing Vector Search Robustness' belong to?",
+    "ground_truth": "Robustness, Information Retrieval",
+    "ground_truth_doc_ids": [
+      "10.1145/3637528.3671807"
+    ],
+    "answer": "An extended empirical study on e introduce an automated fuzzing suite that corrupts text chunks by injecting noise, truncating titles, and blanking summaries.",
+    "retrieved_doc_ids": [
+      "10.1145/3637528.3671819",
+      "10.1145/3637528.3671814",
+      "10.1145/3637528.3671822",
+      "10.1145/3637528.3671810"
+    ],
+    "retrieved_contexts": [
+      "Title: Advanced Perspectives on Synthetic Corruption Testing: Stress-Testing Vector Search Robustness\nAuthors: Kien Duong, Vy Ly\nPublished: 2026-06-07\nCategories: Robustness, Information Retrieval\nSummary: An extended empirical study on e introduce an automated fuzzing suite that corrupts text chunks by injecting noise, truncating titles, and blanking summaries. Experiments reveal critical failure thresholds for dense embedding retrieval Further analysis on scaling parameters.",
+      "Title: Advanced Perspectives on Data Observability and Quality Gates for Production RAG Systems\nAuthors: Anh Tran, Quoc Pham\nPublished: 2021-06-02\nCategories: Software Engineering, Data Systems\nSummary: An extended empirical study on ilent data corruption in RAG pipelines degrades LLM answer faithfulness without throwing runtime errors. We introduce automated quality gates using Great Expectations 1.x to catch stale and malformed embeddings before serving Further analysis on scaling parameters.",
+      "Title: Advanced Perspectives on Automated Data Quality Profiling with Great Expectations in CI/CD\nAuthors: Son Nguyen, Thuy Doan\nPublished: 2026-06-10\nCategories: Data Quality, DevOps\nSummary: ### CORRUPTED_NOISE_ERROR_404_GARBAGE_DATA_STREAM_#%&*$@! ### An extended empirical study on mbedding quality checks directly into data pipelines enables fail-closed governance. We show how Great Expectations suites catch schema drifts and null fields before documents reach the embedding model Further analysis on scaling parameters.",
+      "Title: Automate\nAuthors: Son Nguyen, Thuy Doan\nPublished: 2026-06-08\nCategories: Data Quality, DevOps\nSummary: Embedding quality checks directly into data pipelines enables fail-closed governance. We show how Great Expectations suites catch schema drifts and null fields before documents reach the embedding model."
+    ],
+    "retrieval_hit": false,
+    "token_f1": 0.0,
+    "judge": {
+      "score": 1,
+      "correct": false,
+      "reasoning": "Fallback heuristic judge used because the LLM evaluator was unavailable."
+    }
+  },
+  {
+    "id": "eval_005",
+    "question_type": "multi_hop",
+    "question": "How do the principles in 'Continuous Benchmark Evaluation for Enterprise Retrieval Pipelines' connect with the findings in 'Multi-Agent Consensus for High-Stakes Fact Verification'?",
+    "ground_truth": "'Continuous Benchmark Evaluation for Enterprise Retrieval Pipelines' addresses Evaluation Methodology, whereas 'Multi-Agent Consensus for High-Stakes Fact Verification' addresses Multi-Agent Systems, collectively improving AI robustness.",
+    "ground_truth_doc_ids": [
+      "10.1145/3637528.3671812",
+      "10.1145/3637528.3671808"
+    ],
+    "answer": "",
+    "retrieved_doc_ids": [
+      "10.1145/3637528.3671824",
+      "10.1145/3637528.3671824",
+      "10.1145/3637528.3671820",
+      "10.1145/3637528.3671813"
+    ],
+    "retrieved_contexts": [
+      "Title: Advanced Perspectives on Continuous Benchmark Evaluation for Enterprise Retrieval Pipelines\nAuthors: Quang Le, Yen Vu\nPublished: 2026-06-12\nCategories: Evaluation Methodology, Enterprise Systems\nSummary: ",
+      "Title: Advanced Perspectives on Continuous Benchmark Evaluation for Enterprise Retrieval Pipelines\nAuthors: Quang Le, Yen Vu\nPublished: 2026-06-12\nCategories: Evaluation Methodology, Enterprise Systems\nSummary: ",
+      "Title: Advanced\nAuthors: Phong Vu, Ngan Hoang\nPublished: 2026-06-08\nCategories: Multi-Agent Systems, Artificial Intelligence\nSummary: An extended empirical study on single LLM is susceptible to confirmation bias when evaluating retrieved evidence. We demonstrate a multi-agent debate architecture where specialized verifier agents critique and corroborate citations Further analysis on scaling parameters.",
+      "Title: Advanced Perspectives on Agentic Retrieval-Augmented Generation for Knowledge-Intensive Tasks\nAuthors: Minh Nguyen, Hoang Le\nPublished: 2021-06-01\nCategories: Artificial Intelligence, Information Retrieval\nSummary: An extended empirical study on etrieval-Augmented Generation (RAG) significantly improves large language model accuracy by grounding responses in retrieved passages. We explore agentic multi-hop reasoning and routing across heterogeneous vector indices Further analysis on scaling parameters."
+    ],
+    "retrieval_hit": false,
+    "token_f1": 0.0,
+    "judge": {
+      "score": 1,
+      "correct": false,
+      "reasoning": "The model answer does not address the question at all; it merely repeats the evaluation instructions rather than explaining how the two papers\u2019 principles connect. Therefore it is materially incorrect."
+    }
+  }
+]

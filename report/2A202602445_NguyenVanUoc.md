@@ -1,13 +1,5 @@
 # Member Role Report — Day 10: Data Pipeline & Data Observability
 
-> **Ghi chú nộp bài:** Nhóm 16 gồm 2 thành viên. Các báo cáo cá nhân chi tiết được lưu theo quy ước chuẩn:
-> - Trưởng nhóm: [`report/2A202602709_ChuMinhQuan.md`](2A202602709_ChuMinhQuan.md)
-> - Thành viên: [`report/2A202602445_NguyenVanUoc.md`](2A202602445_NguyenVanUoc.md)
-> 
-> Dưới đây là bản báo cáo của thành viên **Nguyễn Văn Ước**.
-
----
-
 ## 1. Thông tin cá nhân
 
 | Thông tin         | Nội dung |

@@ -2,7 +2,7 @@
   "backend": "chroma",
   "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
   "persist_path": "C:\\VIN_AI_THUC_CHIEN\\K4A-DAY10-Group16-T016\\data\\chroma",
-  "collection_name": "papers-baseline",
+  "collection_name": "papers-repaired",
   "documents": [
     {
       "record_id": "10.1145/3637528.3671812::0",

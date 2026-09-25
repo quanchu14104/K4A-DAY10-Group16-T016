@@ -1,0 +1,42 @@
+{
+  "report_name": "corrupted",
+  "success": false,
+  "gx_success": false,
+  "is_fresh": false,
+  "total_rows": 21,
+  "freshness": {
+    "total_rows": 21,
+    "latest_published": "2026-06-12",
+    "oldest_published": "2021-03-28",
+    "stale_rows": 8,
+    "stale_ratio": 0.381,
+    "freshness_threshold_days": 180,
+    "is_fresh": false
+  },
+  "expectations": [
+    {
+      "expectation": "expect_table_row_count_to_be_between",
+      "success": true
+    },
+    {
+      "expectation": "expect_column_values_to_not_be_null",
+      "success": true
+    },
+    {
+      "expectation": "expect_column_values_to_be_unique",
+      "success": false
+    },
+    {
+      "expectation": "expect_column_values_to_not_be_null",
+      "success": true
+    },
+    {
+      "expectation": "expect_column_values_to_not_be_null",
+      "success": true
+    },
+    {
+      "expectation": "expect_column_value_lengths_to_be_between",
+      "success": false
+    }
+  ]
+}

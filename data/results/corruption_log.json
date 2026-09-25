@@ -1,0 +1,67 @@
+{
+  "timestamp": "2026-09-25 09:04:50 UTC",
+  "original_rows": 24,
+  "corrupted_rows": 24,
+  "actions": [
+    {
+      "scenario": "drop_latest_records",
+      "description": "B\u1ecf r\u01a1i 2 b\u00e0i b\u00e1o m\u1edbi nh\u1ea5t (m\u00f4 ph\u1ecfng m\u1ea5t d\u1eef li\u1ec7u t\u01b0\u01a1i)",
+      "count": 2,
+      "affected_paper_ids": [
+        "10.1145/3637528.3671812",
+        "10.1145/3637528.3671808"
+      ]
+    },
+    {
+      "scenario": "blank_summary",
+      "description": "X\u00f3a tr\u1eafng ph\u1ea7n t\u00f3m t\u1eaft \u1edf 2 d\u00f2ng (m\u00f4 ph\u1ecfng thi\u1ebfu th\u00f4ng tin)",
+      "count": 2,
+      "affected_paper_ids": [
+        "10.1145/3637528.3671804",
+        "10.1145/3637528.3671807"
+      ]
+    },
+    {
+      "scenario": "inject_text_noise",
+      "description": "Ch\u00e8n c\u00e1c chu\u1ed7i k\u00fd t\u1ef1 r\u00e1c v\u00f4 ngh\u0129a v\u00e0o t\u00f3m t\u1eaft \u1edf 2 d\u00f2ng",
+      "count": 2,
+      "affected_paper_ids": [
+        "10.1145/3637528.3671802",
+        "10.1145/3637528.3671824"
+      ]
+    },
+    {
+      "scenario": "truncate_title",
+      "description": "C\u1eaft ng\u1eafn ti\u00eau \u0111\u1ec1 b\u00e0i b\u00e1o xu\u1ed1ng d\u01b0\u1edbi 10 k\u00fd t\u1ef1 \u1edf 2 d\u00f2ng",
+      "count": 2,
+      "affected_paper_ids": [
+        "10.1145/3637528.3671823",
+        "10.1145/3637528.3671822"
+      ]
+    },
+    {
+      "scenario": "stale_date",
+      "description": "\u0110\u1ed5i ng\u00e0y xu\u1ea5t b\u1ea3n v\u1ec1 5 n\u0103m tr\u01b0\u1edbc \u1edf 8 d\u00f2ng (m\u00f4 ph\u1ecfng d\u1eef li\u1ec7u b\u1ecb m\u1ed1c meo)",
+      "count": 8,
+      "affected_paper_ids": [
+        "10.1145/3637528.3671814",
+        "10.1145/3637528.3671813",
+        "10.1145/3637528.3671801",
+        "10.1145/3637528.3671811",
+        "10.1145/3637528.3671806",
+        "10.1145/3637528.3671809",
+        "10.1145/3637528.3671803",
+        "10.1145/3637528.3671805"
+      ]
+    },
+    {
+      "scenario": "duplicate_rows",
+      "description": "Nh\u00e2n \u0111\u00f4i 2 d\u00f2ng \u0111\u1ec3 t\u1ea1o b\u1ea3n ghi tr\u00f9ng l\u1eb7p",
+      "count": 2,
+      "affected_paper_ids": [
+        "10.1145/3637528.3671804",
+        "10.1145/3637528.3671807"
+      ]
+    }
+  ]
+}
