@@ -1,0 +1,27 @@
+PHA 3: VECTOR INDEX CHROMADB & TẠO BENCHMARK TEST SET (CHECKPOINT 2: PHÚT 65 – 95)
+
+Mục tiêu pha này: Đưa dữ liệu sạch vào Vector Store ChromaDB bằng mô hình sentence-transformers/all-MiniLM-L6-v2 và xây dựng bộ câu hỏi chuẩn (Benchmark Test Set).
+Thao tác thực hiện:
+Bước 1: Xây dựng Benchmark Test Set (src/evaluation/testset.py)
+
+Mở file src/evaluation/testset.py, xây dựng 5 dạng câu hỏi dựa trên nội dung thực tế của các bài báo:
+
+    summary: Tóm tắt nội dung nghiên cứu chính.
+    authors: Ai là tác giả của nghiên cứu về chủ đề X?
+    date: Nghiên cứu Y được công bố vào năm/tháng nào?
+    category: Công trình này thuộc lĩnh vực chuyên môn nào?
+    multi_hop: Câu hỏi kết hợp liên ngành giữa hai chủ đề.
+
+Mỗi mẫu trong test_set.json bắt buộc có: id, type, question, ground_truth, và ground_truth_doc_ids.
+
+Lệnh kiểm tra Bước 1:
+python -c "from core.config import load_settings; from evaluation.testset import load_or_create_test_set; import pandas as pd; s=load_settings(); df=pd.read_json(s.paths.clean_json); ts=load_or_create_test_set(df, s.paths.test_set_json); print(f'Tín hiệu hoàn thành: Test set gồm {len(ts.samples)} câu hỏi')"
+
+Tín hiệu hoàn thành: Console in ra Tín hiệu hoàn thành: Test set gồm 5 câu hỏi.
+Bước 2: Smoke test Vector Retrieval & QA Agent (src/retrieval/)
+
+Kiểm tra khả năng truy vấn vector và trích xuất tài liệu từ ChromaDB:
+
+python -c "from core.config import load_settings; from retrieval.index import LocalEmbeddingIndex; s=load_settings(); idx=LocalEmbeddingIndex(s, collection_name='papers-baseline'); idx.build_from_clean(); res=idx.semantic_search('machine learning', top_k=2); print(f'Tín hiệu hoàn thành: Tìm thấy {len(res)} tài liệu liên quan')"
+
+Tín hiệu hoàn thành: Console in ra Tín hiệu hoàn thành: Tìm thấy 2 tài liệu liên quan.

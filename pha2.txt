@@ -1,0 +1,55 @@
+PHA 2: THU THẬP DỮ LIỆU, LÀM SẠCH & DỰNG TRẠM KIỂM SOÁT CHẤT LƯỢNG GX 1.X (CHECKPOINT 1: PHÚT 30 – 65)
+
+Mục tiêu pha này: Hoàn thiện quy trình lấy dữ liệu thô, làm sạch, đo tuổi đời của dữ liệu (age_days) và dựng "chốt kiểm soát chất lượng" (Data Quality Gate) bằng Great Expectations 1.x.
+Thao tác thực hiện:
+Bước 1: Hoàn thiện module Thu Thập Dữ Liệu (src/ingestion/crossref.py)
+
+    1. Mở file src/ingestion/crossref.py.
+    2. Hoàn thiện hàm parse_crossref_payload() để bóc tách các trường:
+
+    paper_id: Lấy DOI chuẩn hóa.
+    title: Chuẩn hóa khoảng trắng.
+    summary: Loại bỏ các thẻ HTML/JATS XML rác (như <jats:p>, </jats:p>).
+    authors, categories, published: Parse định dạng ngày ISO 8601.
+
+    1. Cơ chế Cứu hộ Offline (Dual-Mode): Nếu API Crossref bị quá tải (mã lỗi 429) hoặc phòng lab mất mạng, pipeline tự động chuyển sang đọc snapshot mẫu có sẵn tại data/raw/crossref_response.json để việc học không bị gián đoạn.
+
+Lệnh kiểm tra Bước 1:
+python -c "from core.config import load_settings; from ingestion.crossref import fetch_source_records; s=load_settings(); r=fetch_source_records(s); print(f'Tín hiệu hoàn thành: Đã nạp {len(r)} bài báo')"
+
+Tín hiệu hoàn thành: Console in ra Tín hiệu hoàn thành: Đã nạp 24 bài báo.
+
+Bước 2: Hoàn thiện module Làm Sạch Dữ Liệu (src/ingestion/cleaning.py)
+
+    1. Mở file src/ingestion/cleaning.py.
+    2. Tính toán độ tươi của dữ liệu: age_days = (run_date - published).days.
+    3. Xây dựng trường nội dung tổng hợp cho Vector Database text_for_embedding:
+
+Title: <Tiêu đề>
+Authors: <Danh sách tác giả>
+Published: <Ngày xuất bản>
+Categories: <Chuyên ngành>
+Summary: <Tóm tắt nội dung>
+
+Chép
+
+    1. Khử trùng lặp bản ghi theo khóa duy nhất paper_id.
+
+Lệnh kiểm tra Bước 2:
+python -c "from datetime import datetime, timezone; from core.config import load_settings; from ingestion.crossref import load_raw_records; from ingestion.cleaning import build_clean_dataframe; s=load_settings(); df=build_clean_dataframe(load_raw_records(s.paths.raw_records_json), datetime.now(timezone.utc)); print(f'Tín hiệu hoàn thành: Clean thành công {len(df)} dòng')"
+
+Tín hiệu hoàn thành: Console in ra Tín hiệu hoàn thành: Clean thành công 24 dòng.
+
+Bước 3: Dựng Trạm Kiểm Soát Dữ Liệu (Data Quality Gate) với Great Expectations 1.x (src/observability/quality.py)
+💡 Chuẩn API GX 1.x: Không sử dụng cú pháp cũ context.sources.pandas_default (bị lỗi trên GX 1.x). Sử dụng chuẩn mới: ``python context = gx.get_context(mode="ephemeral") # mode="ephemeral": chạy tạm trên RAM, cực nhanh và không sinh file rác data_source = context.data_sources.add_pandas(name="papers_source") data_asset = data_source.add_dataframe_asset(name="papers_asset") batch_def = data_asset.add_batch_definition_whole_dataframe("papers_batch") batch = batch_def.get_batch(batch_parameters={"dataframe": df}) ``
+
+Thiết lập 4 kỳ vọng (Expectations) bắt buộc:
+
+    ExpectTableRowCountToBeBetween: Số lượng bài báo hợp lệ (5 đến 5000).
+    ExpectColumnValuesToNotBeNull: paper_id, title, text_for_embedding không được phép để trống.
+    ExpectColumnValuesToBeUnique: paper_id là khóa duy nhất, không trùng lặp.
+    ExpectColumnValueLengthsToBeBetween: Trường summary có độ dài tối thiểu 30 ký tự.
+    Kiểm tra độ tươi mới (Freshness Check): Kiểm tra nếu tỉ lệ bài báo cũ (age_days > 180 ngày) vượt quá 25% thì cảnh báo dữ liệu bị mốc, cần cập nhật bài mới.
+
+Lệnh kiểm tra Bước 3:
+python -c "from core.config import load_settings; from observability.quality import run_data_quality_checks; import pandas as pd; s=load_settings(); df=pd.read_json(s.paths.clean_json); res=run_data_quality_checks(df, s, 'test'); print(f'Tín hiệu hoàn thành: Quality check status = {res[\"success\"]}')"
